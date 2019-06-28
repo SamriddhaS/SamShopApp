@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashScreenActivity"
+    android:background="#ffffff"
+    >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/layout1"
+    android:layout_marginTop="60dp"
+    >
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/shopping2"
+        android:id="@+id/ivappicon_id"
+        android:layout_gravity="center"
+        />
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/ivapptitle_id"
+        android:src="@drawable/samshoptitle"
+        android:layout_below="@id/ivappicon_id"
+        android:layout_gravity="center"
+        android:background="@color/transparent"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/samshopcut"
+        android:id="@+id/vcut_id"
+        >
+
+    </View>
+
+
+</LinearLayout>
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".AppHomeActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/container"
+        >
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/lin_id"
+        >
+        <com.daimajia.slider.library.SliderLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/sliderlayour_id"
+            >
+        </com.daimajia.slider.library.SliderLayout>
+
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_margin="5dp"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:src="@drawable/men"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:textSize="20sp"
+                        android:textAlignment="center"
+                        android:textStyle="italic"
+                        android:textColor="@color/white"
+                        android:background="@color/semitransblack"
+                        android:text="Explore Products For Men"
+                        android:layout_alignParentBottom="true"
+
+                        />
+
+                </RelativeLayout>
+                <com.daimajia.slider.library.SliderLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:id="@+id/slidermen_id"
+                    >
+                </com.daimajia.slider.library.SliderLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:src="@drawable/women"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:textSize="20sp"
+                        android:textAlignment="center"
+                        android:textStyle="italic"
+                        android:textColor="@color/white"
+                        android:background="@color/semitransblack"
+                        android:text="Explore Products For Women"
+                        android:layout_alignParentBottom="true"
+
+                        />
+
+                </RelativeLayout>
+                <com.daimajia.slider.library.SliderLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:id="@+id/sliderwomen_id"
+                    >
+                </com.daimajia.slider.library.SliderLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:src="@drawable/kid"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:textSize="20sp"
+                        android:textAlignment="center"
+                        android:textStyle="italic"
+                        android:textColor="@color/white"
+                        android:background="@color/semitransblack"
+                        android:text="Explore Products For Kids"
+                        android:layout_alignParentBottom="true"
+
+                        />
+
+                </RelativeLayout>
+
+                <com.daimajia.slider.library.SliderLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:id="@+id/sliderkid_id"
+                    >
+                </com.daimajia.slider.library.SliderLayout>
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+
+    </LinearLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>

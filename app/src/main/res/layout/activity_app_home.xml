@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AppHomeActivity"
+    android:id="@+id/drawerLayout_id" >
+
+    <include
+        layout="@layout/app_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <ExpandableListView
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:id="@+id/navListViewid"
+        android:background="@color/semitransblack"
+        android:dividerHeight="0.5dp"
+        android:divider="@color/white"
+        android:indicatorLeft="?android:expandableListPreferredItemIndicatorLeft"
+        android:layout_gravity="left|start"
+        >
+    </ExpandableListView>
+
+</android.support.v4.widget.DrawerLayout>
