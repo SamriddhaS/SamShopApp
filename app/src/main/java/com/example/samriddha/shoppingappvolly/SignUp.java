@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -25,7 +26,7 @@ import java.util.Map;
 
 public class SignUp extends AppCompatActivity {
 
-    EditText name , password , email , phNum , conPassword ;
+    EditText name, password, email, phNum, conPassword;
 
 
     @Override
@@ -34,11 +35,11 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
 
-        name = (EditText)findViewById(R.id.signupname_id);
-        password = (EditText)findViewById(R.id.signuppass_id);
-        email = (EditText)findViewById(R.id.signupemail_id);
-        phNum = (EditText)findViewById(R.id.signupphone_id);
-        conPassword = (EditText)findViewById(R.id.signupconpass_id);
+        name = (EditText) findViewById(R.id.signupname_id);
+        password = (EditText) findViewById(R.id.signuppass_id);
+        email = (EditText) findViewById(R.id.signupemail_id);
+        phNum = (EditText) findViewById(R.id.signupphone_id);
+        conPassword = (EditText) findViewById(R.id.signupconpass_id);
 
     }
 
@@ -52,57 +53,51 @@ public class SignUp extends AppCompatActivity {
 
         String url = "http://103.230.103.142/onlineshoppingapp/show.asmx/Registration";
 
-        if (mName.isEmpty()){
+        if (mName.isEmpty()) {
             name.setError("Please Enter Name");
-            return ;
-        }else if (mEmail.isEmpty()){
+            return;
+        } else if (mEmail.isEmpty()) {
             email.setError("Please Enter Email");
-            return ;
-        }else if (mPhonnum.isEmpty()){
+            return;
+        } else if (mPhonnum.isEmpty()) {
             phNum.setError("Please Enter Phone Number");
-            return ;
-        }else if (mPassword.isEmpty()){
+            return;
+        } else if (mPassword.isEmpty()) {
             Toast.makeText(this, "Please Enter Account Password", Toast.LENGTH_SHORT).show();
-            return ;
-        }else if (mConPassword.isEmpty()){
+            return;
+        } else if (mConPassword.isEmpty()) {
             Toast.makeText(this, "Please Confirm Account Password", Toast.LENGTH_SHORT).show();
-            return ;
-        }
-
-        if (mPassword.equals(mConPassword)){
-
-            RegisterAccountMethod(url);
-        }else {
-
-            Toast.makeText(this, "Password And Confirm Password Doesn't Match" , Toast.LENGTH_SHORT).show();
             return;
         }
 
+        if (mPassword.equals(mConPassword)) {
 
+            RegisterAccountMethod(url);
+        } else {
 
-
-
+            Toast.makeText(this, "Password And Confirm Password Doesn't Match", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
 
     }
 
     private void RegisterAccountMethod(String url) {
 
-        StringRequest stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
 
-                    String status=new JSONObject(response).getJSONArray("Response").getJSONObject(0).getString("Messagetext");
+                    String status = new JSONObject(response).getJSONArray("Response").getJSONObject(0).getString("Messagetext");
 
 
-                    if (status.equals("Sucess")){
+                    if (status.equals("Sucess")) {
 
                         Toast.makeText(SignUp.this, "Your Account Successfully Created", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(SignUp.this,LogInActivity.class));
+                        startActivity(new Intent(SignUp.this, LogInActivity.class));
                         finish();
-                    }
-                    else {
+                    } else {
                         Toast.makeText(SignUp.this, "Failed To Create Account", Toast.LENGTH_SHORT).show();
                     }
 
@@ -116,15 +111,15 @@ public class SignUp extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
 
             }
-        }){
+        }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                HashMap<String,String> hashMap=new HashMap<>();
+                HashMap<String, String> hashMap = new HashMap<>();
 
-                hashMap.put("Name",name.getText().toString().trim());
-                hashMap.put("Password",password.getText().toString().trim());
-                hashMap.put("PhNo",phNum.getText().toString().trim());
-                hashMap.put("EmailId",email.getText().toString().trim());
+                hashMap.put("Name", name.getText().toString().trim());
+                hashMap.put("Password", password.getText().toString().trim());
+                hashMap.put("PhNo", phNum.getText().toString().trim());
+                hashMap.put("EmailId", email.getText().toString().trim());
                 return hashMap;
 
 
@@ -140,10 +135,11 @@ public class SignUp extends AppCompatActivity {
 
     public void AlreadyHvAccount(View view) {
 
-        startActivity(new Intent(SignUp.this,LogInActivity.class));
+        startActivity(new Intent(SignUp.this, LogInActivity.class));
         finish();
 
     }
+
     @Override
     public void onBackPressed() {
 

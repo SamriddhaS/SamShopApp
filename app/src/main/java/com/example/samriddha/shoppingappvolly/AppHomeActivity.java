@@ -151,7 +151,6 @@ public class AppHomeActivity extends AppCompatActivity {
         bannerSlidder.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
         bannerSlidder.setCustomAnimation(new DescriptionAnimation());
         bannerSlidder.setDuration(5000);
-
     }
 
     private void prepareMainBannerData() {
